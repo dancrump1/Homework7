@@ -89,25 +89,29 @@
   var p1Wins = 0;
   var p2Wins = 0;
 
+ var playersSection = database.ref('/players/');
+ var player1Section = playersSection.child('/player1/')
+ var player2Section = playersSection.child('/player2/')
+
 //If p1 buttons are clicked....
 $(document).on("click","#p1rock-button", function(){
     p1RPSChoice = $("#p1rock-button").val();
 console.log($("#p1rock-button").val());
-database.ref().set({
+player1Section.set({
     p1Choice: p1RPSChoice
 });
 });
 $(document).on("click","#p1paper-button", function(){
     p1RPSChoice = $("#p1paper-button").val();
 console.log($("#p1paper-button").val());
-database.ref().set({
+player1Section.set({
     p1Choice: p1RPSChoice
 });
 });
 $(document).on("click","#p1scissors-button", function(){
     p1RPSChoice = $("#p1scissors-button").val();
 console.log($("#p1scissors-button").val());
-database.ref().set({
+player1Section.set({
     p1Choice: p1RPSChoice
 });
 });
@@ -118,21 +122,21 @@ database.ref().set({
 $(document).on("click","#p2rock-button", function(){
     p2RPSChoice = $("#p2rock-button").val();
 console.log($("#p2rock-button").val());
-database.ref().set({
+player2Section.set({
     p2Choice: p2RPSChoice
 });
 });
 $(document).on("click","#p2paper-button", function(){
     p2RPSChoice = $("#p2paper-button").val();
 console.log($("#p2paper-button").val());
-database.ref().set({
+player2Section.set({
     p2Choice: p2RPSChoice
 });
 });
 $(document).on("click","#p2scissors-button", function(){
     p2RPSChoice = $("#p2scissors-button").val();
 console.log($("#p2scissors-button").val());
-database.ref().set({
+player2Section.set({
     p2Choice: p2RPSChoice
 });
 });
@@ -155,8 +159,8 @@ $("#p2wins-text").text("Wins :"+p1Wins)
 
 
 database.ref().on("value", function(snapshot){
-    console.log(snapshot.val().p1Choice);
-    console.log(snapshot.val().p2Choice);
+    // console.log(snapshot.val().p1Choice);
+    // console.log(snapshot.val().p2Choice);
     $("#p1choice-text").text(snapshot.val().p1Choice);
     $("#p2choice-text").text(snapshot.val().p2Choice);
     p1RPSChoice = snapshot.val().p1Choice;
