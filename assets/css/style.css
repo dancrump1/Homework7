@@ -1,16 +1,20 @@
 .Resultscontainer{
-    margin-left: 20%;
-}
-#containerP1{
-    background: teal;
-}#containerP2{
-    background: teal;
-}
-.container{
-    background: blue;
-
 }
 
+.player1Container{
+    border-width: 3px;
+    border-style: dashed;
+    border-color: black;
+}
+.player2Container{
+    border-width: 3px;
+    border-style: dashed;
+    border-color: black;
+}
+.titleContainer{
+    text-align: center;
+    background: rgb(178, 212, 178);
+}
 body{
-    background: yellow;
+    background: rgb(223, 236, 199);
 }

@@ -1,174 +1,105 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Rock Paper Scissors!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>    <link rel="stylesheet" type="text/css"  href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-    
-<h1>Rock Paper Scissors....</h1>
+    <div class="titleContainer">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Rock Paper Scissors....</h1>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
+    <div class="player1Container">
+        <div class="row">
+            <div class="col-sm-3">
                 <h2>Player 1</h2>
-                
-            <div id="containerP1">
-                
-                <!-- will only be used in p1 functions -->
-                <button class="p1buttons" value="rock" id="p1rock-button">rock</button>
-                <button class="p1buttons" value="paper" id="p1paper-button">paper</button>
-                <button class="p1buttons" value="scissors" id="p1scissors-button">scissors</button>
-            </div>
-        </div>
-        <div class="col-sm-6">
-                <h2>Player 2</h2>
-            <div id="containerP2">
-               
 
-                <!-- will only be used in p2 functions -->
-                <button class="p2buttons" value="rock" id="p2rock-button">rock</button>
-                <button class="p2buttons" value="paper" id="p2paper-button">paper</button>
-                <button class="p2buttons" value="scissors" id="p2scissors-button">scissors</button>
+                <div id="containerP1">
+
+                    <!-- will only be used in p1 functions -->
+                    <button class="p1buttons" value="rock" id="p1rock-button">rock</button>
+                    <button class="p1buttons" value="paper" id="p1paper-button">paper</button>
+                    <button class="p1buttons" value="scissors" id="p1scissors-button">scissors</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-            <div class="col-sm-6">
-                <!-- will hold player 1's choice -->
-                    <div id="P1choice">
-                        <h6 id="p1choice-text">Player 1 choice</h6>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <!-- will hold player 2's choice -->
-                    <div id="P2choice">
-                        <h6 id="p2choice-text">Player 2 choice</h6>
-                    </div>
-                </div>
-        
-    </div>
-</div>
-<div class="Resultscontainer">
-    <div class="row">
-        <div class="col-sm-6">
-            <!-- will tell if p1 or p2 wins -->
-            <span id="winnerContainer"></span>
-        </div>
-    
-<br>
+
+
+
+    <div class="p1choiceContainer">
         <div class="col-sm-3">
+
+            <!-- will hold player 1's choice -->
+            <div id="P1choice">
+                <h6 id="p1choice-text">Player 1 choice</h6>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="p2choiceContainer">
+        <div class="col-sm-3">
+
+            <!-- will hold player 2's choice -->
+            <div id="P2choice">
+                <h6 id="p2choice-text">Player 2 choice</h6>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="player2Container">
+
+        <div class="col-sm-6">
+            <h2>Player 2</h2>
+            <div id="containerP2">
+
+
+            <!-- will only be used in p2 functions -->
+            <button class="p2buttons" value="rock" id="p2rock-button">rock</button>
+            <button class="p2buttons" value="paper" id="p2paper-button">paper</button>
+            <button class="p2buttons" value="scissors" id="p2scissors-button">scissors</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Resultscontainer">
+        <div class="row">
+            <div class="col-sm-6">
+                <!-- will tell if p1 or p2 wins -->
+                <span id="winnerContainer"></span>
+            </div>
+
+            <br>
+            <div class="col-sm-3">
                 <p id="p1wins-text">P1 Wins: 0</p>
                 <p id="p2wins-text">P2 Wins: 0</p>
-   
+
+            </div>
+        </div>
     </div>
-    </div>
-</div>
-<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBs5m_EAtZ54tamL20hRgayS4ihf7kc-i8",
-    authDomain: "rpsmultiplayer-ca88d.firebaseapp.com",
-    databaseURL: "https://rpsmultiplayer-ca88d.firebaseio.com",
-    projectId: "rpsmultiplayer-ca88d",
-    storageBucket: "rpsmultiplayer-ca88d.appspot.com",
-    messagingSenderId: "1042121347475"
-  };
-  firebase.initializeApp(config);
-
-  var database = firebase.database();
-  var p1RPSChoice;
-  var p2RPSChoice;
-  var p1Wins = 0;
-  var p2Wins = 0;
-
- var playersSection = database.ref('/players/');
- var player1Section = playersSection.child('/player1/')
- var player2Section = playersSection.child('/player2/')
-
-//If p1 buttons are clicked....
-$(document).on("click","#p1rock-button", function(){
-    p1RPSChoice = $("#p1rock-button").val();
-console.log($("#p1rock-button").val());
-player1Section.set({
-    p1Choice: p1RPSChoice
-});
-});
-$(document).on("click","#p1paper-button", function(){
-    p1RPSChoice = $("#p1paper-button").val();
-console.log($("#p1paper-button").val());
-player1Section.set({
-    p1Choice: p1RPSChoice
-});
-});
-$(document).on("click","#p1scissors-button", function(){
-    p1RPSChoice = $("#p1scissors-button").val();
-console.log($("#p1scissors-button").val());
-player1Section.set({
-    p1Choice: p1RPSChoice
-});
-});
-
-
-
-// if p2 buttons are clicked....
-$(document).on("click","#p2rock-button", function(){
-    p2RPSChoice = $("#p2rock-button").val();
-console.log($("#p2rock-button").val());
-player2Section.set({
-    p2Choice: p2RPSChoice
-});
-});
-$(document).on("click","#p2paper-button", function(){
-    p2RPSChoice = $("#p2paper-button").val();
-console.log($("#p2paper-button").val());
-player2Section.set({
-    p2Choice: p2RPSChoice
-});
-});
-$(document).on("click","#p2scissors-button", function(){
-    p2RPSChoice = $("#p2scissors-button").val();
-console.log($("#p2scissors-button").val());
-player2Section.set({
-    p2Choice: p2RPSChoice
-});
-});
-
-// if (p1RPSChoice == "rock" && p2RPSChoice == "scissors"){
-// p1Win();
-// }
-
-//if p1 wins, increase p1 wins
-function p1Win(){
-p1Wins++;
-$("#p1wins-text").text("Wins :"+p1Wins)
-}
-
-//if p2 wins, increase p2 wins
-function p2Win(){
-p2Wins++;
-$("#p2wins-text").text("Wins :"+p1Wins)
-}
-
-
-database.ref().on("value", function(snapshot){
-    // console.log(snapshot.val().p1Choice);
-    // console.log(snapshot.val().p2Choice);
-    $("#p1choice-text").text(snapshot.val().p1Choice);
-    $("#p2choice-text").text(snapshot.val().p2Choice);
-    p1RPSChoice = snapshot.val().p1Choice;
-    p2RPSChoice = snapshot.val().p2Choice;
-})
-
-</script>
-<script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app.js"></script>
 
 </body>
+
 </html>
